@@ -9,17 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HanB">
-        <activity android:name=".WritePostscriptActivity"></activity>
-        <activity android:name=".ProgramInfoActivity" />
-        <activity android:name=".ProgramActivity" />
-        <activity android:name=".ChangePasswordActivity" />
-        <activity android:name=".ChangeNicknameActivity" />
-        <activity android:name=".MypageActivity" />
-        <activity android:name=".PostscriptActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".FindActivity" />
         <activity android:name=".SignupActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

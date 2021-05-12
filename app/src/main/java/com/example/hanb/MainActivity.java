@@ -1,30 +1,52 @@
 package com.example.hanb;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
-import android.content.Intent;
-import android.os.Handler;
+import android.view.MenuItem;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 
 public class MainActivity extends AppCompatActivity {
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        startLoading();
-    }
+        bottomNavigationView = findViewById(R.id.bottomNavi);
 
-    private void startLoading() {
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
+        //처음화면
+        getSupportFragmentManager().beginTransaction().add(R.id.main_frame, new HomeFragment()).commit();
+
+        //바텀 네비게이션뷰 안의 아이템 설정
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void run() {
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(intent);
-                finish();
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.home_menu:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new HomeFragment()).commit();
+                        break;
+
+                    case R.id.program_menu:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new ProgramFragment()).commit();
+                        break;
+
+                    case R.id.postscript_menu:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new PostscriptFragment()).commit();
+                        break;
+
+                    case R.id.mypage_menu:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new MypageFragment()).commit();
+                        break;
+                }
+                return true;
             }
-        }, 1000);
+        });
     }
 }
