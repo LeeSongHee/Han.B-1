@@ -34,7 +34,8 @@ public class LoginActivity extends AppCompatActivity {
         });
         
         signInButton.setOnClickListener(v -> {
-
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
         });
 
     }
