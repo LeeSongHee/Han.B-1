@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <SearchView
-        android:id="@+id/rearch_postscript"
+        android:id="@+id/rearch_write_postscript"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginTop="50dp"
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/logo_write_postscript" />
 
     <RatingBar
-        android:id="@+id/ratingBar_postscript"
+        android:id="@+id/ratingBar_write_postscript"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -42,7 +42,7 @@
         android:progressTint="#FFE400"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rearch_postscript" />
+        app:layout_constraintTop_toBottomOf="@+id/rearch_write_postscript" />
 
     <TextView
         android:id="@+id/psText_write_postscript"
@@ -50,6 +50,7 @@
         android:layout_height="200dp"
         android:background="@drawable/edittext_rounded_corner_rectangle"
         android:hint="여기에 후기를 작성하세요."
+        android:maxLength="500"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
@@ -57,7 +58,7 @@
         app:layout_constraintBottom_toTopOf="@+id/enroll_write_postscript"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingBar_postscript" />
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar_write_postscript" />
 
     <Button
         android:id="@+id/enroll_write_postscript"
