@@ -3,6 +3,7 @@ package com.example.hanb;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -16,18 +17,26 @@ import android.widget.Toast;
 public class WritePostscriptFragment extends Fragment {
     private View view;
     private Button enrollButton_write_postscript;
+    private ConstraintLayout write_postscript_layout;
+    private EditText psText_write_postscript;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view =  inflater.inflate(R.layout.fragment_write_postscript, container, false);
 
         enrollButton_write_postscript = view.findViewById(R.id.enrollButton_write_postscript);
+        write_postscript_layout = view.findViewById(R.id.write_postscript_layout);
+        psText_write_postscript = view.findViewById(R.id.psText_write_postscript);
+
         enrollButton_write_postscript.setOnClickListener(v -> {
             Toast.makeText(getActivity(), "후기 등록", Toast.LENGTH_SHORT).show();
         });
 
+        write_postscript_layout.setOnClickListener(v -> {
+            InputMethodManager inputMethodManager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(psText_write_postscript.getWindowToken(), 0);
+        });
+
         return view;
     }
-
-
 }
