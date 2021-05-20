@@ -21,6 +21,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="비교과후기"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,12 +35,15 @@
         style="@style/Widget.AppCompat.RatingBar.Indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
         android:isIndicator="false"
         android:max="5"
         android:numStars="5"
         android:rating="0"
         android:stepSize="0.5"
+        app:layout_constraintBottom_toTopOf="@+id/postscript_postscipt_item"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/program_postscipt_item"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
