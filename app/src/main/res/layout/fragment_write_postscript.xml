@@ -44,7 +44,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rearch_write_postscript" />
 
-    <TextView
+    <EditText
         android:id="@+id/psText_write_postscript"
         android:layout_width="350dp"
         android:layout_height="200dp"
@@ -55,13 +55,13 @@
         android:paddingTop="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/enroll_write_postscript"
+        app:layout_constraintBottom_toTopOf="@+id/enrollButton_write_postscript"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ratingBar_write_postscript" />
 
     <Button
-        android:id="@+id/enroll_write_postscript"
+        android:id="@+id/enrollButton_write_postscript"
         android:layout_width="210dp"
         android:layout_height="50dp"
         android:layout_marginBottom="100dp"
